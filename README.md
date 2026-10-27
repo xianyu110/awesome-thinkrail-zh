@@ -11,6 +11,20 @@
 
 ---
 
+## 截图索引
+
+| # | 文件 | 类型 | 说明 |
+|---|------|------|------|
+| 1 | [`images/01-install.png`](images/01-install.png) | **真实** | `install.sh` 安装日志 |
+| 2 | [`images/02-version-help.png`](images/02-version-help.png) | **真实** | `--version` / `--help` |
+| 3 | [`images/03-host-start.png`](images/03-host-start.png) | **真实** | host 启动日志 |
+| 4 | [`images/04-ui-localhost.png`](images/04-ui-localhost.png) | **真实** | localhost UI（未登录） |
+| 5 | [`images/05-demo-chat-schematic.png`](images/05-demo-chat-schematic.png) | **示意图** | 演示对话（需模型密钥，未实拍） |
+
+> 真实截图在 Linux 沙盒用 Xvfb + 官方安装包采集；用户名路径已脱敏为 `<user>`。
+
+---
+
 ## 这是什么？
 
 **ThinkRail** 是 JetBrains 在 GitHub 上开源（Apache-2.0）的「会越用越懂你项目」的智能体 IDE：
@@ -68,6 +82,10 @@ curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh
 curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh | bash -s -- --channel stable --version 0.2.0
 ```
 
+真实安装日志（本机 Linux 跑 `install.sh`，路径已脱敏）：
+
+![ThinkRail install.sh 真实输出](images/01-install.png)
+
 ### Windows（cmd / PowerShell 同一条）
 
 ```powershell
@@ -90,6 +108,18 @@ thinkrail ~/code/my-repo
 thinkrail --version
 thinkrail --help
 ```
+
+真实 `--version` / `--help` 输出：
+
+![ThinkRail version/help](images/02-version-help.png)
+
+用 `--host 127.0.0.1`（或默认）拉起后的 host 日志：
+
+![ThinkRail host start](images/03-host-start.png)
+
+浏览器打开本机 UI（Projects 列表，未登录模型账号）：
+
+![ThinkRail localhost UI](images/04-ui-localhost.png)
 
 状态数据默认在 `~/.thinkrail`。卸载：
 
@@ -134,7 +164,9 @@ sudo apt install libgtk-3-0 libwebkit2gtk-4.1-0 libayatana-appindicator3-1 librs
 5. 观察：Agent 是否只在独立 **workspace / worktree** 里干活；满意后再考虑合并分支。
 6. （可选）打开 Specs 面板，看项目旁的 `SPEC.md` 图；需要工具时在 Settings → Extensions / MCP 里按需开启。
 
-终端风格示意（非真实截图）：
+> **示意图**（未登录模型、未真实跑通对话——需要 JetBrains AI / pi 凭据，本教程不代填密钥）：
+
+![ThinkRail 演示对话示意图](images/05-demo-chat-schematic.png)
 
 ```text
 $ thinkrail ~/code/demo-app
